@@ -1,0 +1,24 @@
+﻿@model List<Link>
+
+<div class ="body-content">
+<div>
+    @using (Html.BeginForm("Create", "Link", FormMethod.Post))
+    {
+        <input type="text" name="URL" placeholder="URL" /> <br />
+        <button type="submit">Add</button>
+    }
+</div>
+<div>
+    <table>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td><b>Full link:</b> @Html.DisplayFor(model => item.URL)</td>
+            <td><b>Short link:</b> <a href="/@item.Hash" target="_blank">@Html.DisplayFor(model => item.Hash)</a></td>
+            <td>  | @Html.ActionLink("Edit", "Edit", "Link", item)   |</td>
+            <td>@Html.ActionLink("Delete", "Delete", "Link", item)   |</td>
+        </tr>
+        }
+    </table>
+</div>
+</div>
