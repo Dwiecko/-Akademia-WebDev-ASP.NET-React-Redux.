@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LinkShortenerWebApi.DAO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace LinkShortenerWebApi
@@ -23,9 +19,12 @@ namespace LinkShortenerWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Info{
+            services.AddSwaggerGen(setupAction: c => c.SwaggerDoc("v1", new Info{
                                                             Title = "Link Shortener API", 
                                                             Version = "v1" }));
+            services.AddDbContext<LinksDbContext>(optionsAction: options => options.UseSqlite(
+                                                                            Configuration.GetConnectionString(
+                                                                            name: "LinksDbConnection")));   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
