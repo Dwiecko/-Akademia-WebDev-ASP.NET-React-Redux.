@@ -12656,11 +12656,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\LinkShortenerWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\LinkShortenerWebApi.csproj",
       "projectName": "LinkShortenerWebApi",
-      "projectPath": "c:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\LinkShortenerWebApi.csproj",
+      "projectPath": "C:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\LinkShortenerWebApi.csproj",
       "packagesPath": "C:\\Users\\DawidPC\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\obj\\",
+      "outputPath": "C:\\Users\\DawidPC\\Desktop\\Akademia-WebDev-ASP.NET-React-Redux\\LinkShortenerWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
