@@ -25,6 +25,7 @@ namespace LinkShortenerWebApi.Repositories
 
         public Link Create(Link link)
         {
+            link.Hash = ConvertLinkToHex(link);
             _context.Links.Add(link);
             _context.SaveChanges();
             return link;
@@ -55,6 +56,20 @@ namespace LinkShortenerWebApi.Repositories
 
         public Link Get(int id){
             return _context.Links.Find(id);
+        }
+        private String ConvertLinkToHex(Link link)
+        {
+            var hexCode = String.Format("{0:X}", link.URL.GetHashCode());
+            return hexCode;
+        }
+        public string GetUrlForHash(string hash)
+        {
+            var urlItem = _context.Links.Where(item => item.Hash == hash).FirstOrDefault();
+
+            if (urlItem == null)
+                return string.Empty;
+
+            return urlItem.URL;
         }
     }
 }

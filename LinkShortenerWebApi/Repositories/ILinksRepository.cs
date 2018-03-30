@@ -10,6 +10,7 @@ namespace LinkShortenerWebApi.Repositories
         Link Get(int Id);
         Link Create(Link link);
         Link Update(Link link);
-        void Delete(int id);        
+        void Delete(int id);
+        string GetUrlForHash(string hash);
     }
 }
