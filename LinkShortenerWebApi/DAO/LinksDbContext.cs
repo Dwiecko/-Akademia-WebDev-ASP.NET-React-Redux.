@@ -9,6 +9,6 @@ namespace LinkShortenerWebApi.DAO
         {
         }
 
-        public DbSet<Link> Links { get; set; }
+        public DbSet<Link> Links {get; set;}
     }
 }

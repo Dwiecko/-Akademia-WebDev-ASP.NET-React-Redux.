@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using LinkShortenerWebApi.DAO;
+using LinkShortenerWebApi.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace LinkShortenerWebApi.Repositories
+{
+    public class LinksRepository : ILinksRepository
+    {
+        private readonly LinksDbContext _context;
+        private readonly int _linksToShow = 20;
+        public LinksRepository(LinksDbContext context) 
+        {
+            _context = context;
+        }
+        public void Delete(int id)
+        {
+            Link linkEntity = _context.Links.Find(id);
+            _context.Links.Remove(linkEntity);
+            _context.SaveChanges();
+        }
+
+        public Link Create(Link link)
+        {
+            _context.Links.Add(link);
+            _context.SaveChanges();
+            return link;
+        }
+
+        public Link Update(Link link)
+        {
+            _context.Links.Attach(link);
+            _context.Entry(link).State = EntityState.Modified;
+            _context.SaveChanges();
+            return link;
+        }
+
+        public (IEnumerable<Link>, int) Get(string search, int skip)
+        {
+            var linksFilteredByName = search != null ? _context.Links
+            .Where(x => x.URL.ToLower()
+            .Contains(search)) : _context.Links;
+            var linksCount = linksFilteredByName.Count();
+
+            var paginatedLink = linksFilteredByName
+            .OrderBy(x => x.Id)
+            .Skip(skip)
+            .Take(_linksToShow);
+
+            return (paginatedLink, linksCount);
+        }
+
+        public Link Get(int id){
+            return _context.Links.Find(id);
+        }
+    }
+}
