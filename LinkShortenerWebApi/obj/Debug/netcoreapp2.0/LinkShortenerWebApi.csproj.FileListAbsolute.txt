@@ -1,0 +1,10 @@
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\bin\Debug\netcoreapp2.0\LinkShortenerWebApi.deps.json
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\bin\Debug\netcoreapp2.0\LinkShortenerWebApi.runtimeconfig.json
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\bin\Debug\netcoreapp2.0\LinkShortenerWebApi.runtimeconfig.dev.json
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\bin\Debug\netcoreapp2.0\LinkShortenerWebApi.dll
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\bin\Debug\netcoreapp2.0\LinkShortenerWebApi.pdb
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\obj\Debug\netcoreapp2.0\LinkShortenerWebApi.csproj.CoreCompileInputs.cache
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\obj\Debug\netcoreapp2.0\LinkShortenerWebApi.AssemblyInfoInputs.cache
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\obj\Debug\netcoreapp2.0\LinkShortenerWebApi.AssemblyInfo.cs
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\obj\Debug\netcoreapp2.0\LinkShortenerWebApi.dll
+C:\Users\DawidPC\Desktop\Akademia-WebDev-ASP.NET-React-Redux\LinkShortenerWebApi\obj\Debug\netcoreapp2.0\LinkShortenerWebApi.pdb
