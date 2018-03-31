@@ -16,7 +16,7 @@ namespace LinkShortenerWebApi.Repositories
         {
             _context = context;
         }
-        public void Delete(int id)
+        public void Delete(long id)
         {
             Link linkEntity = _context.Links.Find(id);
             _context.Links.Remove(linkEntity);
@@ -30,7 +30,6 @@ namespace LinkShortenerWebApi.Repositories
             _context.SaveChanges();
             return link;
         }
-
         public Link Update(Link link)
         {
             _context.Links.Attach(link);
@@ -41,12 +40,12 @@ namespace LinkShortenerWebApi.Repositories
 
         public (IEnumerable<Link>, int) Get(string search, int skip)
         {
-            var linksFilteredByName = search != null ? _context.Links
+            var linksFilteredByURL = search != null ? _context.Links
             .Where(x => x.URL.ToLower()
             .Contains(search)) : _context.Links;
-            var linksCount = linksFilteredByName.Count();
+            var linksCount = linksFilteredByURL.Count();
 
-            var paginatedLink = linksFilteredByName
+            var paginatedLink = linksFilteredByURL
             .OrderBy(x => x.Id)
             .Skip(skip)
             .Take(_linksToShow);
@@ -54,10 +53,8 @@ namespace LinkShortenerWebApi.Repositories
             return (paginatedLink, linksCount);
         }
 
-        public Link Get(int id){
-            return _context.Links.Find(id);
-        }
-        private String ConvertLinkToHex(Link link)
+        public Link Get(long id) => _context.Links.Find(id);
+        private string ConvertLinkToHex(Link link)
         {
             var hexCode = String.Format("{0:X}", link.URL.GetHashCode());
             return hexCode;

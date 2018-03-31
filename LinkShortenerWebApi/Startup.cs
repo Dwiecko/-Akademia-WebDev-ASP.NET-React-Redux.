@@ -38,6 +38,7 @@ namespace LinkShortenerWebApi
             }
             app.UseMvc();
             app.UseSwagger();
+            app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", 
                                                     name: "Link Shortener API"));
         }
