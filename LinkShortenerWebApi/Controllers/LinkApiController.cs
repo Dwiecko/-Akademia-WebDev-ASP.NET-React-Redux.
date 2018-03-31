@@ -16,13 +16,13 @@ namespace LinkShortenerWebApi.Controllers
       }
 
       [HttpGet("{id}")]
-      // GET api/stops/{id}
+      // GET api/links/{id}
       public IActionResult Get(int id)
       {
           return Ok(repository.Get(id));
       }
 
-      //GET api/stops/?search={string}&page={int}
+      //GET api/links/?search={PartOfURL}&page={int}
       [HttpGet]
       public IActionResult Get([FromQuery]GetLinkRequest request)
       {
@@ -40,7 +40,7 @@ namespace LinkShortenerWebApi.Controllers
           return Ok(result);
       }
 
-      // DELETE api/stops/{id}
+      // DELETE api/links/{id}
       [HttpDelete]
       public IActionResult Delete(int id)
       {
@@ -48,18 +48,18 @@ namespace LinkShortenerWebApi.Controllers
           return Ok();
       }
 
-      //POST api/stops
+      //POST api/links
       [HttpPost]
       public IActionResult Post([FromBody]CreateLinkRequest createLink)
       {
             return Ok(repository.Create(createLink.GetLink()));
       }
 
-      //POST api/stops
+      //POST api/links
       [HttpPut]
-      public IActionResult Put([FromBody]Link stop)
+      public IActionResult Put([FromBody]Link link)
       {
-            return Ok(repository.Update(stop));
+            return Ok(repository.Update(link));
       }
   }
     }
