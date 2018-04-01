@@ -26,7 +26,7 @@ namespace LinkShortenerWebApi
             services.AddDbContext<LinksDbContext>(optionsAction: options => options.UseSqlite(
                                                                             Configuration.GetConnectionString(
                                                                             name: "LinksDbConnection")));   
-            services.AddTransient<ILinksRepository, LinksRepository>();  
+            services.AddSingleton<ILinksRepository, LinksRepository>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +36,15 @@ namespace LinkShortenerWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc();
-            app.UseSwagger();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", 
                                                     name: "Link Shortener API"));
+            app.UseMvc(routes =>
+            {
+            routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Link}/{action=Index}");
+            });                                        
         }
     }
 }
