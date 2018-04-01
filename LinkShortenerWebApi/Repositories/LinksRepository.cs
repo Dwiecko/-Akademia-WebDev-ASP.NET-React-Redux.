@@ -52,6 +52,7 @@ namespace LinkShortenerWebApi.Repositories
 
             return (paginatedLink, linksCount);
         }
+        public List<Link> GetLinks() => _context.Links.ToList();
 
         public Link Get(long id) => _context.Links.Find(id);
         private string ConvertLinkToHex(Link link)

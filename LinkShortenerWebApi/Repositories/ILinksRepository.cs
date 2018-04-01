@@ -8,6 +8,7 @@ namespace LinkShortenerWebApi.Repositories
     {
         (IEnumerable<Link>, int) Get(string search, int skip);
         Link Get(long Id);
+        List<Link> GetLinks();
         Link Create(Link link);
         Link Update(Link link);
         void Delete(long id);
