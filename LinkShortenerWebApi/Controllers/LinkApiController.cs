@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LinkShortenerWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Produces("application/json")]
+    [Route("api/LinkApi")]
     public class LinkApiController : Controller
     {
       private readonly ILinksRepository repository;
