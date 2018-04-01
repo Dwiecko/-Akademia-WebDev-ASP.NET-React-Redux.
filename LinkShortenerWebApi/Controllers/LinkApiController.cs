@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LinkShortenerWebApi.Controllers
 {
     [Produces("application/json")]
-    [Route("api/LinkApi")]
+    [Route(template: "api/Link")]
     public class LinkApiController : Controller
     {
       private readonly ILinksRepository repository;
@@ -16,14 +16,16 @@ namespace LinkShortenerWebApi.Controllers
           this.repository = repository;
       }
 
+      // GET api/Link/{id}
+      // Sample: http://localhost:5000/api/Link/2
       [HttpGet("{id}")]
-      // GET api/links/{id}
-      public IActionResult Get(int id)
+      public IActionResult Get(long id)
       {
           return Ok(repository.Get(id));
       }
 
-      //GET api/links/?search={PartOfURL}&page={int}
+      //GET api/Link?Page={PageNumber}&Search={PartOfString}
+      //Sample: http://localhost:5000/api/Link?Page=1&Search=trojmiasto.pl
       [HttpGet]
       public IActionResult Get([FromQuery]GetLinkRequest request)
       {
@@ -41,22 +43,23 @@ namespace LinkShortenerWebApi.Controllers
           return Ok(result);
       }
 
-      // DELETE api/links/{id}
+      // DELETE api/Link
+      // Sample: http://localhost:5000/api/Link?id=2
       [HttpDelete]
-      public IActionResult Delete(int id)
+      public IActionResult Delete(long id)
       {
           repository.Delete(id);
           return Ok();
       }
 
-      //POST api/links
+      //POST api/Link
       [HttpPost]
       public IActionResult Post([FromBody]CreateLinkRequest createLink)
       {
             return Ok(repository.Create(createLink.GetLink()));
       }
 
-      //POST api/links
+      //POST api/Link
       [HttpPut]
       public IActionResult Put([FromBody]Link link)
       {

@@ -10,14 +10,14 @@ public class RedirectController : Controller
             _repository = linksRepository;
         }
 
-        [HttpGet("api/{hash}")]
+        [HttpGet("{hash}")]
         public IActionResult Index(string hash)
         {
             var URL = GetRepository().GetUrlForHash(hash);
             if (URL.Contains("http://") || URL.Contains("https://"))
-                return Ok(Json(URL));
+                return Ok((URL));
             else
-                return Ok(Json("http://" + URL));
+                return Ok(("http://" + URL));
         }
 
     private ILinksRepository GetRepository() => _repository;
