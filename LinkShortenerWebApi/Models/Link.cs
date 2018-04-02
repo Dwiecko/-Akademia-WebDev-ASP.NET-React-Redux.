@@ -1,8 +1,8 @@
-using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LinkShortenerWebApi.Models
 {
-    public class Link
+    public class Link 
     {
         public long Id { get; set; }
         public string URL { get; set; }

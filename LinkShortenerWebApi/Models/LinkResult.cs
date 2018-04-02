@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace LinkShortenerWebApi.Models
 {
     public class LinkResult

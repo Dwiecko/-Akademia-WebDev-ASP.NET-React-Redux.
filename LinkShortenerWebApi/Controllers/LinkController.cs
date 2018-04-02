@@ -1,3 +1,4 @@
+using System;
 using LinkShortenerWebApi.Models;
 using LinkShortenerWebApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +24,8 @@ namespace LinkShortener.Controllers
         [HttpPost]
         public IActionResult Create(Link link)
         {
-            _repository.Create(link);
-            return Redirect("Index");
+                _repository.Create(link);
+                return Redirect("Index");
         }
 
         [HttpGet]
