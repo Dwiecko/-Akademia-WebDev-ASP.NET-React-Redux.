@@ -1,4 +1,4 @@
 export const CFG_HTTP = {
-  URL_BASE: 'http://cloud.hackcube.org/api/',
-  URL_STOPS: 'stops'
-};
+    URL_BASE: 'http://localhost:56342/',
+    URL_LINKS: 'api/Link'
+  };

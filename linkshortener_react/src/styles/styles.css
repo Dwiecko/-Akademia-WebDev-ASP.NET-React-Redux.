@@ -1,0 +1,30 @@
+.tablePagination-wrapper {
+  justify-content: center;
+  align-items: center; }
+
+.tablePagination-next {
+  text-align: right; }
+
+.tablePagination-desc {
+  text-align: center; }
+  .tablePagination-desc p {
+    line-height: 38px; }
+
+.linksTable {
+  justify-content: center; }
+  .linksTable table {
+    border-collapse: collapse; }
+  .linksTable table, .linksTable th, .linksTable td {
+    border: 2px solid #dddddd; }
+  .linksTable thead {
+    background-color: #439e4a; }
+    .linksTable thead th {
+      color: white; }
+  .linksTable tbody tr {
+    height: auto; }
+    .linksTable tbody tr:nth-child(2n) {
+      background-color:   #cbffcd; }
+    .linksTable tbody tr:nth-child(2n + 1) {
+      background-color: #e9f2f8; }
+  .linksTable tbody td {
+    padding: 10px; }
